@@ -97,7 +97,7 @@
     return function() {
       localStorage.clear();
       localStorage.setItem('selectedBooking', JSON.stringify(booking));
-      window.location.href = 'bookingpage.html'; // Navigate to the booking page
+      window.location.href = 'bookingpage.php'; // Navigate to the booking page
     }
   }
   // HTML kreálás az összes elemre

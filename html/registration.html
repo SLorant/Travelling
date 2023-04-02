@@ -17,10 +17,10 @@
 
   <body>
     <nav>
-      <a href="home.html" id="logo" class="nav-black">T4life</a>
+      <a href="home.php" id="logo" class="nav-black">T4life</a>
       <ul id="navlinks">
-        <li><a href="home.html" class="nav-black">Home</a></li>
-        <li><a href="bookings.html" class="nav-black">Browse</a></li>
+        <li><a href="home.php" class="nav-black">Home</a></li>
+        <li><a href="bookings.php" class="nav-black">Browse</a></li>
         <li>
           <a href="login.html" id="current-page" class="nav-black">Login</a>
         </li>
@@ -32,26 +32,36 @@
       <div id="title-box">
         <h1 id="logreg-title">Registration</h1>
       </div>
-      <form>
+      <form method="POST" action="registration.php">
         <label id="name"
           >name
-          <input type="text" class="long-input" id="name-input" />
+          <input type="text" class="long-input" id="name-input" name="name" />
         </label>
         <label id="bday"
           >birthday
-          <input type="date" class="long-input" id="bday-input" />
+          <input
+            type="date"
+            class="long-input"
+            id="bday-input"
+            name="birthday"
+          />
         </label>
         <label id="email"
           >email
-          <input type="email" class="long-input" id="email-input" />
+          <input
+            type="email"
+            class="long-input"
+            id="email-input"
+            name="email"
+          />
         </label>
         <label
           >username
-          <input type="text" class="long-input" />
+          <input type="text" class="long-input" name="username" />
         </label>
         <label
           >password
-          <input type="password" class="long-input" />
+          <input type="password" class="long-input" name="password" />
         </label>
         <div id="regbtn-box">
           <button class="form-btn" type="submit">Sign up</button>

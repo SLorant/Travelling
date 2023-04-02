@@ -17,10 +17,10 @@
 
   <body>
     <nav>
-      <a href="home.html" id="logo" class="nav-black">T4life</a>
+      <a href="home.php" id="logo" class="nav-black">T4life</a>
       <ul id="navlinks">
-        <li><a href="home.html" class="nav-black">Home</a></li>
-        <li><a href="bookings.html" class="nav-black">Browse</a></li>
+        <li><a href="home.php" class="nav-black">Home</a></li>
+        <li><a href="bookings.php" class="nav-black">Browse</a></li>
         <li>
           <a href="login.html" id="current-page" class="nav-black">Login</a>
         </li>
@@ -32,14 +32,14 @@
       <div id="title-box">
         <h1 id="logreg-title">Login</h1>
       </div>
-      <form action="">
+      <form method="POST" action="login.php">
         <label
           >username
-          <input type="text" />
+          <input type="text" name="username" />
         </label>
         <label
           >password
-          <input type="password" />
+          <input type="password" name="password" />
         </label>
         <div id="logbtn-box">
           <button type="submit" class="form-btn">Sign in</button>
