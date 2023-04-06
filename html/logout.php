@@ -1,10 +1,11 @@
 <?php
 session_start();
 
-// Unset the session data
 unset($_SESSION['user']);
+unset($_SESSION['username']);
+$_SESSION = array();
+session_destroy();
 
-// Redirect to the login page
 header('Location: login.html');
 exit;
 ?>

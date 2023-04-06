@@ -1,18 +1,28 @@
 <?php
 session_start();
-// Check if the user is logged in
 if (!isset($_SESSION['user'])) {
-  header('Location: login.php');
+  header('Location: login.html');
   exit;
 }
-// Get the user data from the session
 $user = $_SESSION['user'];
+
+$userJson = file_get_contents('users.json');
+$users = json_decode($userJson, true);
+$loggedInUser = $_SESSION['username'];
+
+foreach ($users as $user) {
+  $username = $user['username'];
+  if ($user['username'] === $loggedInUser) {
+    if (isset($user['bookings'])) {
+      $bookings = $user['bookings'];
+    }
+  }
+}
 ?>
 
 <!DOCTYPE html>
 <html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -48,32 +58,50 @@ $user = $_SESSION['user'];
     <hr id="nav-line" />
   </header>
 
-
-  <div class="bookingbox">
-    <h2 class="bookingheader">User Profile</h2>
+<div class="mainbox">
+  <div class="userbox">
+    <h2 class="userheader">User Profile</h2>
     <div class="infogrid">
       <p class="staticinfo"> <strong>Username</strong> </p>
-      <p id="period">
+      <p>
         <?php echo $user['username']; ?>
       </p>
       <p class="staticinfo"> <strong>Name</strong> </p>
-      <p id="hotel">
+      <p>
         <?php echo $user['name']; ?>
       </p>
       <p class="staticinfo"> <strong>Email</strong> </p>
-      <p id="price">
+      <p>
         <?php echo $user['email']; ?>
       </p>
       <p class="staticinfo">
         <strong>Birthday</strong>
       </p>
-      <p id="rooms">
+      <p >
         <?php echo $user['birthday']; ?>
       </p>
-
     </div>
     <a class="logout" href="logout.php">Logout</a>
   </div>
+  <div class="bookingbox">
+  <h2 class="userheader">Your bookings</h2>
+        <?php if (isset($bookings)) {
+          foreach ($bookings as $location => $booking) {
+            $price = $booking['price'];
+            $nights = $booking['nights'];
+            $personCount = $booking['personcount'];
+            echo "<div class='userbookings'>
+              <p class='lefttext'> $location </p>
+              <p> $nights</p>
+              <p class='lefttext moneytext'> $price HUF </p>
+              <p> Booked for $personCount</p>
+              </div>";
+          }
+        } else {
+          echo "<div><p>You have no bookings yet</p></div>";
+        } ?>
+      
+  </div>
+  </div>
 </body>
-
 </html>

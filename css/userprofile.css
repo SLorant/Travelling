@@ -5,6 +5,7 @@ body {
     line-height: 1.5;
     margin: 0;
     padding: 0;
+    
   }
 
   #profile {
@@ -34,14 +35,21 @@ body {
     font-size: 34px;
   }
 
-  
+  .mainbox {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    place-items: center;
+    gap: 50px;
+  }
 
 
-  .bookingbox{
+  .userbox{
     border: 1px solid #55829e;
     width: 30%;
     height: 410px;
-    margin-top: 20px;
+    margin-top: 40px;
     border-radius: 5px;
     display: flex;
     justify-content: start;
@@ -86,5 +94,36 @@ body {
         margin-bottom: 15px;
         color: #1c3d52;
         font-family: "Roboto", sans-serif;
+  }
+
+
+  .bookingbox{
+    border: 1px solid #55829e;
+    width: 20%;
+    height: 410px;
+    margin-top: 40px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: start;
+    place-items: center;
+    flex-direction: column;
+    overflow: scroll;
+    position: relative;
+    max-height:100;
+  }
+  .userbookings{
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 80%;
+    border-bottom: 1px solid #9e8056;
+    text-align: end;
+    margin-bottom: 20px;
+  }
+  .lefttext{
+    text-align: start;
+    /* font-size: 16px!important; */
+  }
+  .moneytext{
+    color: #9e8056;
   }
   

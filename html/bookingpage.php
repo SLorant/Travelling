@@ -1,3 +1,63 @@
+<?php
+session_start();
+ini_set('log_errors', 1);
+ini_set('error_log', 'errors.log');
+$price = 1;
+$personCount = 1;
+$location = "";
+$nights = 1;
+
+if (isset($_COOKIE['price'])) {
+  $price = $_COOKIE['price'];
+} else {
+  error_log("Cookie price not set");
+}
+
+if (isset($_COOKIE['person-count'])) {
+  $personCount = $_COOKIE['person-count'];
+} else {
+  error_log("Cookie personCount not set");
+}
+if (isset($_COOKIE['location'])) {
+  $location = $_COOKIE['location'];
+} else {
+  error_log("Cookie location not set");
+}
+if (isset($_COOKIE['nights'])) {
+  $nights = $_COOKIE['nights'];
+} else {
+  error_log("Cookie nights not set");
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  $userJson = file_get_contents('users.json');
+  $users = json_decode($userJson, true);
+
+  $loggedInUser = $_SESSION['username'];
+
+  foreach ($users as &$user) {
+    if ($user['username'] === $loggedInUser) {
+      $newBooking = array(
+        'location' => $location,
+        'price' => $price * $personCount,
+        'nights' => $nights,
+        'personcount' => $personCount
+      );
+      $user['bookings'][$location] = $newBooking;
+      break;
+    }
+  }
+  if (!$loggedInUser) {
+    error_log('Could not find current user in JSON');
+    exit;
+  }
+
+  $newUserJson = json_encode($users, JSON_PRETTY_PRINT);
+  file_put_contents('users.json', $newUserJson);
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +65,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <link rel="stylesheet" href="../css/bookingpage.css" />
-  <link rel="icon" type="image/png" href="/images/travel.png" />
+  <link rel="icon" type="image/png" href="/Travelling/images/travel.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,7 +83,6 @@
         <li><a href="home.php">Home</a></li>
         <li><a href="bookings.php" id="current-page">Browse</a></li>
         <?php
-        session_start();
         if (isset($_SESSION['username'])) {
           echo '<li><a href="userprofile.php"  class="nav-black">' . $_SESSION['username'] . '</a></li>';
         } else {
@@ -40,19 +99,19 @@
       <h2 id="header2">In a random hotel</h2>
       <div id="slider" class="slider">
         <div class="slide animate">
-          <img src="kepek/placeholder.jpg" id="img1" alt="firstpic" />
+          <img src="/Travelling/images/placeholder.jpg" id="img1" alt="firstpic" />
         </div>
 
         <div class="slide">
-          <img src="kepek/placeholder.jpg" id="img2" alt="secondpic" />
+          <img src="/Travelling/images/placeholder.jpg" id="img2" alt="secondpic" />
         </div>
 
         <div class="slide">
-          <img src="kepek/placeholder.jpg" id="img3" alt="thirdpic" />
+          <img src="/Travelling/images/placeholder.jpg" id="img3" alt="thirdpic" />
         </div>
 
         <div class="slide">
-          <img src="kepek/placeholder.jpg" id="img4" alt="fourthpic" />
+          <img src="/Travelling/images/placeholder.jpg" id="img4" alt="fourthpic" />
         </div>
 
         <button class="btn btn-next">></button>
@@ -92,6 +151,7 @@
   </div>
   <script src="../JS/bookingpage.js"></script>
   <script src="../JS/bookingpageslider.js"></script>
+ 
 </body>
 
 </html>
