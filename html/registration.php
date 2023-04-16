@@ -140,18 +140,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           <p class="reginfotext">The username has to be minimum 4 characters long.
             The password has to be minimum 8 characters long.</p></div>
         <?php if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($errors)): ?>
-            <div class="error-box">
-              <h3>Error</h3>
-                <ul>
-               <?php foreach ($errors as $error): ?>
-                    <p class="errortext"><?php echo $error; ?></p>
-                 <?php endforeach; ?>
-                </ul>
-            </div>
+              <div class="error-box">
+                <h3>Error</h3>
+                  <div>
+                 <?php foreach ($errors as $error): ?>
+                        <p class="errortext"><?php echo $error; ?></p>
+                   <?php endforeach; ?>
+                  </div>
+              </div>
      <?php elseif ($_SERVER["REQUEST_METHOD"] == "POST" && empty($errors)): ?>
-            <div class="error-box successbox">
-               <p class="errortext successtext">Registration successful!</p>
-           </div>
+              <div class="error-box successbox">
+                 <p class="errortext successtext">Registration successful!</p>
+             </div>
     <?php endif; ?>
         <div id="regbtn-box">
           <button class="form-btn" type="submit">Sign up</button>

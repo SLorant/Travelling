@@ -7,17 +7,17 @@
         "password": "$2y$10$8SbL.iczhENAwjM8F7LqXetAIAFwqmeAWo28JTOD8rtkH3b.7w3kq"
     },
     "2": {
-        "name": "ff",
-        "birthday": "2023-03-31",
+        "name": "admin",
+        "birthday": "2023-04-07",
         "email": "admin@admin.admin",
         "username": "admin",
         "password": "$2y$10$Ah5EHIWKVNUzaO7kDuClA.j5kJpoQUWd45Z3\/bgWG5zRYICBKndn.",
         "bookings": {
             "Firenze, Vespucci Villa": {
                 "location": "Firenze, Vespucci Villa",
-                "price": 1716000,
+                "price": 429000,
                 "nights": "5 nights",
-                "personcount": "4"
+                "personcount": "1"
             },
             "Cairo, Hotel Abdul-Ahim": {
                 "location": "Cairo, Hotel Abdul-Ahim",
@@ -29,6 +29,12 @@
                 "location": "Honolulu, Waikiki Hotel",
                 "price": 509000,
                 "nights": "5 nights",
+                "personcount": "1"
+            },
+            "Irinyi \u00e9p\u00fclet": {
+                "location": "Irinyi \u00e9p\u00fclet",
+                "price": 0,
+                "nights": "420 nights",
                 "personcount": "1"
             }
         }
