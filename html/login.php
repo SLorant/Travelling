@@ -86,12 +86,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           <input type="password" name="password" />
         </label>
         <?php if (isset($errorMessage)): ?>
-              <div class="error-box">
-                <ul>
-                <p class="errortext"><?php
-                echo $errorMessage; ?></p>  
-                </ul>
-                </div>
+                <div class="error-box">
+                  <ul>
+                  <p class="errortext"><?php
+                  echo $errorMessage; ?></p>  
+                  </ul>
+                  </div>
         <?php endif; ?>
         <div id="logbtn-box">
           <button type="submit" class="form-btn">Sign in</button>

@@ -4,8 +4,8 @@ if (!isset($_SESSION['user'])) {
   header('Location: login.php');
   exit;
 }
-$user = $_SESSION['user'];
 
+$user = $_SESSION['user'];
 $userJson = file_get_contents('users.json');
 $users = json_decode($userJson, true);
 $loggedInUser = $_SESSION['username'];
@@ -15,18 +15,16 @@ if ($_SESSION['username'] == "admin") {
   $admin = true;
 }
 
-foreach ($users as $user) {
-  $username = $user['username'];
-  if ($user['username'] === $loggedInUser) {
-    if (isset($user['bookings'])) {
-      $bookings = $user['bookings'];
+foreach ($users as $user2) {
+  if ($user2['username'] === $loggedInUser) {
+    if (isset($user2['bookings'])) {
+      $bookings = $user2['bookings'];
     }
+    $user = $user2;
   }
 }
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   foreach ($users as $key => $user) {
-    $username = $user['username'];
     if ($user['username'] === $loggedInUser) {
       $name = $_POST['name'];
       $birthday = $_POST['birthday'];
@@ -55,11 +53,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   session_regenerate_id(true);
   $_SESSION['loggedInUser'] = $loggedInUser;
 
-  setcookie('username', $username, time() + (30 * 24 * 60 * 60));
   header('Location: userprofile.php');
   exit();
 }
-
 ?>
 
 <!DOCTYPE html>
