@@ -1,0 +1,45 @@
+[05-Apr-2023 08:30:29 Europe/Berlin] PHP Warning:  Undefined array key "price" in C:\xampp\htdocs\Travelling\html\bookingpage.php on line 9
+[05-Apr-2023 08:30:29 Europe/Berlin] 
+[05-Apr-2023 08:30:29 Europe/Berlin] its ok
+[05-Apr-2023 08:30:29 Europe/Berlin] PHP Warning:  Undefined array key "price" in C:\xampp\htdocs\Travelling\html\bookingpage.php on line 11
+[05-Apr-2023 08:30:32 Europe/Berlin] PHP Warning:  Undefined array key "price" in C:\xampp\htdocs\Travelling\html\bookingpage.php on line 9
+[05-Apr-2023 08:30:32 Europe/Berlin] 
+[05-Apr-2023 08:30:32 Europe/Berlin] its ok
+[05-Apr-2023 08:30:32 Europe/Berlin] PHP Warning:  Undefined array key "price" in C:\xampp\htdocs\Travelling\html\bookingpage.php on line 11
+[05-Apr-2023 08:38:51 Europe/Berlin] PHP Warning:  Undefined array key "price" in C:\xampp\htdocs\Travelling\html\bookingpage.php on line 9
+[05-Apr-2023 08:38:51 Europe/Berlin] 
+[05-Apr-2023 08:38:51 Europe/Berlin] its ok
+[05-Apr-2023 08:38:51 Europe/Berlin] PHP Warning:  Undefined array key "price" in C:\xampp\htdocs\Travelling\html\bookingpage.php on line 11
+[05-Apr-2023 08:50:37 Europe/Berlin] PHP Warning:  Undefined array key "price" in C:\xampp\htdocs\Travelling\html\bookingpage.php on line 25
+[05-Apr-2023 08:50:37 Europe/Berlin] 
+[05-Apr-2023 08:50:37 Europe/Berlin] its ok
+[05-Apr-2023 08:50:37 Europe/Berlin] PHP Warning:  Undefined array key "price" in C:\xampp\htdocs\Travelling\html\bookingpage.php on line 27
+[05-Apr-2023 08:50:41 Europe/Berlin] PHP Warning:  Undefined array key "price" in C:\xampp\htdocs\Travelling\html\bookingpage.php on line 25
+[05-Apr-2023 08:50:41 Europe/Berlin] 
+[05-Apr-2023 08:50:41 Europe/Berlin] its ok
+[05-Apr-2023 08:50:41 Europe/Berlin] PHP Warning:  Undefined array key "price" in C:\xampp\htdocs\Travelling\html\bookingpage.php on line 27
+[05-Apr-2023 08:50:53 Europe/Berlin] PHP Warning:  Undefined array key "price" in C:\xampp\htdocs\Travelling\html\bookingpage.php on line 25
+[05-Apr-2023 08:50:53 Europe/Berlin] 
+[05-Apr-2023 08:50:53 Europe/Berlin] its ok
+[05-Apr-2023 08:50:53 Europe/Berlin] PHP Warning:  Undefined array key "price" in C:\xampp\htdocs\Travelling\html\bookingpage.php on line 27
+[05-Apr-2023 08:53:46 Europe/Berlin] PHP Warning:  Undefined array key "price" in C:\xampp\htdocs\Travelling\html\bookingpage.php on line 22
+[05-Apr-2023 08:53:46 Europe/Berlin] 
+[05-Apr-2023 09:31:27 Europe/Berlin] Cookie location not set
+[05-Apr-2023 09:31:27 Europe/Berlin] Cookie nights not set
+[05-Apr-2023 09:48:26 Europe/Berlin] PHP Warning:  Undefined array key "location" in C:\xampp\htdocs\Travelling\html\bookingpage.php on line 43
+[06-Apr-2023 08:55:42 Europe/Berlin] Cookie price not set
+[06-Apr-2023 08:55:42 Europe/Berlin] Cookie personCount not set
+[06-Apr-2023 08:55:42 Europe/Berlin] Cookie location not set
+[06-Apr-2023 08:55:42 Europe/Berlin] Cookie nights not set
+[06-Apr-2023 14:58:15 Europe/Berlin] Cookie price not set
+[06-Apr-2023 14:58:15 Europe/Berlin] Cookie personCount not set
+[06-Apr-2023 14:58:15 Europe/Berlin] Cookie location not set
+[06-Apr-2023 14:58:15 Europe/Berlin] Cookie nights not set
+[11-Apr-2023 12:02:52 Europe/Berlin] Cookie price not set
+[11-Apr-2023 12:02:52 Europe/Berlin] Cookie personCount not set
+[11-Apr-2023 12:02:52 Europe/Berlin] Cookie location not set
+[11-Apr-2023 12:02:52 Europe/Berlin] Cookie nights not set
+[15-Apr-2023 08:31:25 Europe/Berlin] Cookie price not set
+[15-Apr-2023 08:31:25 Europe/Berlin] Cookie personCount not set
+[15-Apr-2023 08:31:25 Europe/Berlin] Cookie location not set
+[15-Apr-2023 08:31:25 Europe/Berlin] Cookie nights not set
