@@ -27,7 +27,7 @@
         if (isset($_SESSION['username'])) {
           echo '<li><a href="userprofile.php">' . $_SESSION['username'] . '</a></li>';
         } else {
-          echo '<li><a href="login.html">Login</a></li>';
+          echo '<li><a href="login.php">Login</a></li>';
         }
         ?>
       </ul>
@@ -96,7 +96,7 @@
     </div>
     <div id="information">
       <h1>Information</h1>
-      <p>
+      <p> 
         email: t4life@supportmail.com<br />phone: +1 646 980 4741<br />address:
         Albuquerque, New-Mexico 87121, United States
       </p>

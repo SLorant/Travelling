@@ -27,7 +27,7 @@
         if (isset($_SESSION['username'])) {
           echo '<li><a href="userprofile.php"  class="nav-black">' . $_SESSION['username'] . '</a></li>';
         } else {
-          echo '<li><a href="login.html"  class="nav-black">Login</a></li>';
+          echo '<li><a href="login.php"  class="nav-black">Login</a></li>';
         }
         ?>
       </ul>

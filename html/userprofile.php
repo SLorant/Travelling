@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['user'])) {
-  header('Location: login.html');
+  header('Location: login.php');
   exit;
 }
 $user = $_SESSION['user'];
@@ -9,6 +9,11 @@ $user = $_SESSION['user'];
 $userJson = file_get_contents('users.json');
 $users = json_decode($userJson, true);
 $loggedInUser = $_SESSION['username'];
+
+$admin = false;
+if ($_SESSION['username'] == "admin") {
+  $admin = true;
+}
 
 foreach ($users as $user) {
   $username = $user['username'];
@@ -18,6 +23,43 @@ foreach ($users as $user) {
     }
   }
 }
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  foreach ($users as $key => $user) {
+    $username = $user['username'];
+    if ($user['username'] === $loggedInUser) {
+      $name = $_POST['name'];
+      $birthday = $_POST['birthday'];
+      $password = $_POST['password'];
+
+      if ($birthday != "") {
+        $user['birthday'] = $birthday;
+        $users[$key]['birthday'] = $birthday;
+      }
+      if ($name != "") {
+        $user['name'] = $name;
+        $users[$key]['name'] = $name;
+      }
+      if ($password != "") {
+        $password = password_hash($password, PASSWORD_DEFAULT);
+        $user['password'] = $password;
+        $users[$key]['password'] = $password;
+      }
+
+    }
+  }
+
+  $newUserJson = json_encode($users, JSON_PRETTY_PRINT);
+  file_put_contents('users.json', $newUserJson);
+
+  session_regenerate_id(true);
+  $_SESSION['loggedInUser'] = $loggedInUser;
+
+  setcookie('username', $username, time() + (30 * 24 * 60 * 60));
+  header('Location: userprofile.php');
+  exit();
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -50,7 +92,7 @@ foreach ($users as $user) {
         if (isset($_SESSION['username'])) {
           echo '<li><a href="userprofile.php" id="current-page" class="nav-black">' . $_SESSION['username'] . '</a></li>';
         } else {
-          echo '<li><a href="login.html" id="current-page" class="nav-black">Login</a></li>';
+          echo '<li><a href="login.php" id="current-page" class="nav-black">Login</a></li>';
         }
         ?>
       </ul>
@@ -81,7 +123,10 @@ foreach ($users as $user) {
         <?php echo $user['birthday']; ?>
       </p>
     </div>
-    <a class="logout" href="logout.php">Logout</a>
+    <div class="btn-box">
+      <a class="logout" href="logout.php">Log out</a>
+      
+    </div>
   </div>
   <div class="bookingbox">
   <h2 class="userheader">Your bookings</h2>
@@ -103,5 +148,50 @@ foreach ($users as $user) {
       
   </div>
   </div>
+  <div class="lastbox">
+  <button id="toggleFormBtn" class="profilebutton">Change my profile</button>
+  <form method="post"  id="profileForm" style="display:none;">
+        <label for="name" class="proflabel">Name</label>
+        <input type="text" id="name" name="name" class="profinput"/>
+        <label for="birthday" class="proflabel">Birthday</label>
+        <input type="date" id="birthday" name="birthday"  class="profinput"/>
+        <label for="password" class="proflabel">Password</label>
+        <input type="password" id="password" name="password" class="profinput"/>
+
+        <input type="submit" value="Update Profile" />
+        <a class="logout delete" href="userdelete.php">Delete Profile</a>
+    </form>
+    <!-- Az admin jelszó, hogy ki lehessen próbálni: 12345678 -->
+    <?php if ($admin) {
+      echo '<div class="adminbox">
+      <h2>Admin panel</h2>
+      <div class="adminusers">';
+      foreach ($users as $key => $user) {
+        $name = $user['username'];
+        if ($user['username'] !== $loggedInUser) {
+          echo "<div class='oneuserdiv'><p class='oneusertext'>";
+          echo $user['username'];
+          echo "</p>";
+          echo "<form method='post' action='delete_user.php' class='adminform'>
+              <input type='hidden' name='user_key' value='$name'>
+              <input type='submit' class='logout delete deluser' name='delete_user' value='Delete user'>
+            </form>";
+          echo "</div>";
+        }
+      }
+      echo "</div></div>";
+    }
+    ?>
+    </div>
+    <script>
+    document.getElementById("toggleFormBtn").addEventListener("click", function() {
+        var form = document.getElementById("profileForm");
+        if (form.style.display === "none") {
+            form.style.display = "flex";
+        } else {
+            form.style.display = "none";
+        }
+    });
+</script>
 </body>
 </html>

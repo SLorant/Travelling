@@ -1,43 +1,38 @@
-[
-    {
-        "name": "swsw",
-        "birthday": "2023-04-13",
-        "email": "wssw@ddede.ded",
-        "username": "vvv",
-        "password": "$2y$10$KMwyAPiXuoVbX2JYX\/IOvexw1qyVOj3fZAXTzbb8l80vmv4wgYUYy",
+{
+    "3": {
+        "name": "adss",
+        "birthday": "2023-04-09",
+        "email": "dsdsds@dffdf.dfdf",
+        "username": "qweqwe",
+        "password": "$2y$10$8SbL.iczhENAwjM8F7LqXetAIAFwqmeAWo28JTOD8rtkH3b.7w3kq"
+    },
+    "21": {
+        "name": "admin",
+        "birthday": "2023-03-29",
+        "email": "admin@admin.admin",
+        "username": "admin",
+        "password": "$2y$10$Ah5EHIWKVNUzaO7kDuClA.j5kJpoQUWd45Z3\/bgWG5zRYICBKndn.",
         "bookings": {
-            "Reykjav\u00edk, Aurora Hotel": {
-                "location": "Reykjav\u00edk, Aurora Hotel",
-                "price": 498000,
-                "nights": "3 nights",
+            "Firenze, Vespucci Villa": {
+                "location": "Firenze, Vespucci Villa",
+                "price": 858000,
+                "nights": "5 nights",
                 "personcount": "2"
             },
             "Cairo, Hotel Abdul-Ahim": {
                 "location": "Cairo, Hotel Abdul-Ahim",
-                "price": 199000,
+                "price": 597000,
                 "nights": "4 nights",
-                "personcount": "1"
-            },
-            "Firenze, Vespucci Villa": {
-                "location": "Firenze, Vespucci Villa",
-                "price": 429000,
-                "nights": "5 nights",
-                "personcount": "1"
-            },
-            "Kyoto, Hamacho's Hut": {
-                "location": "Kyoto, Hamacho's Hut",
-                "price": 1347000,
-                "nights": "6 nights",
                 "personcount": "3"
             }
         }
     },
-    {
-        "name": "sdd",
-        "birthday": "2023-03-30",
-        "email": "dsdsd@dffdf.fdfd",
-        "username": "asd",
-        "password": "$2y$10$XK82aQB0r8rBTTxTZRYMQ.x25uZPtwuL5tiI0giJyMZw8cZfEW.qu",
+    "22": {
+        "name": "B\u00e9la",
+        "birthday": "2023-05-03",
+        "email": "fafafa@fff.fff",
+        "username": "Belagomb",
+        "password": "$2y$10$sybv0SVrr8uZ1P.4AdN.Z.hhBE.AiZLa.SaR.8SfqdNUFp3XzdOoC",
         "bookings": {
             "Firenze, Vespucci Villa": {
                 "location": "Firenze, Vespucci Villa",
@@ -47,4 +42,4 @@
             }
         }
     }
-]
+}

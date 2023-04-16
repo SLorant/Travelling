@@ -19,6 +19,7 @@ a:link, a:active, a:visited, a:hover{
 }
 
 
+
 /* Navbar */
 nav{
     padding-top:20px;
@@ -138,7 +139,7 @@ nav{
     justify-content: center;
     align-items: center;
     margin-top: 20px;
-    margin-bottom: 100px;
+    margin-bottom: 70px;
     width: 100%;
     height: 90px;
     background-color: #1c3d52;
@@ -147,10 +148,15 @@ nav{
 form{
     display: flex;
     flex-direction: column; 
+    justify-content: center;
+    place-items: center;
 }
 form label{
     font-size: 25px;
     margin-bottom: 20px;
+}
+.repassword{
+    margin-right: 70px;
 }
 form input{
     height: 30px;
@@ -179,7 +185,7 @@ form input{
     align-items: center;
     justify-content: center;
     height: 100px;
-    margin-bottom: 400px;
+    margin-bottom: 200px;
 }
 #logbtn-box{
     display: flex;
@@ -207,6 +213,55 @@ form input{
 #signup{
     color: #875509;
     font-weight: bold;
+}
+#qmark-icon{
+    width: 25px;
+    height: auto;
+    margin-left: 5px;
+}
+#req{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+.reginfotext{
+    margin-left: 10px;
+    color: #1c3d52;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+}
+h3 {
+    color: #ffffff;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    margin-top:10px;
+    font-size: 30px;
+}
+.errortext {
+    color: #ffffff;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    margin: 10px 0px;
+    
+  }
+.error-box{
+    margin-top: 30px;
+    border-radius: 10px;
+    width: 70%;
+    background-color: #ff5050;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    place-items: center;
+}
+.successbox{
+    background-color: #0ca90a;
+    width: 60%;
+}
+.successtext{
+    font-size: 24px;
+    margin-bottom: 10px;
 }
  /* Footer */
 footer{
